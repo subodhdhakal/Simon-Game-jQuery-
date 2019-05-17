@@ -15,10 +15,18 @@ var userClickedPattern = [];
         userClickedPattern.push(userChosenColour);
         console.log(userClickedPattern);
         playSound(this.id);
+        animatePress(this.id);
+
+        setTimeout(function() {
+            $(".btn").removeClass("pressed");
+        }, 100);
     });
 
     function playSound(name) {
         var audio = new Audio("/sounds/"+name+".mp3");
         audio.play();
     }
-    
+
+    function animatePress(currentColour) {
+        $("#"+currentColour).addClass("pressed");
+    }

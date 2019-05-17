@@ -1,5 +1,9 @@
 var gamePattern = [];
 var userClickedPattern = [];
+nextSequence();
+
+function nextSequence() {
+
 
     var buttonColours = ['red', 'blue', 'green', 'yellow'];
     var randomNumber = Math.floor(Math.random()*4);
@@ -21,6 +25,7 @@ var userClickedPattern = [];
             $(".btn").removeClass("pressed");
         }, 100);
     });
+}
 
     function playSound(name) {
         var audio = new Audio("/sounds/"+name+".mp3");

@@ -1,10 +1,13 @@
 var gamePattern = [];
 var userClickedPattern = [];
-nextSequence();
+var i = 0;
+if($(document).keypress(function(event) {
+    if((event.key).toLowerCase() === 'a')
+    nextSequence();
+}));
 
 function nextSequence() {
-
-
+    $("h1").text("Level "+i++);
     var buttonColours = ['red', 'blue', 'green', 'yellow'];
     var randomNumber = Math.floor(Math.random()*4);
     console.log(randomNumber);
